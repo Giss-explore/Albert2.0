@@ -1,0 +1,1 @@
+if (!data.items || data.items.length === 0) return "No encontré resultados web relevantes.";

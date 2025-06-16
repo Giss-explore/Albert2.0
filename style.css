@@ -1,0 +1,137 @@
+:root {
+  --fondo: #0d1117;
+  --fondo-chat: #161b22;
+  --texto-brillante: #c9f4ff;
+  --mensaje-bot: #58a6ff;
+  --mensaje-user: #fcd34d;
+  --borde: #30363d;
+  --acento: #10b981;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto-brillante);
+  height: 100%;
+}
+
+main {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: var(--mensaje-bot);
+  text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+}
+
+.description {
+  color: #8b949e;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.chat-container {
+  background-color: var(--fondo-chat);
+  width: 100%;
+  max-width: 900px;
+  height: 60vh;
+  overflow-y: auto;
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 2px solid var(--borde);
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  max-width: 75%;
+  padding: 0.8rem 1.2rem;
+  margin: 0.5rem 0;
+  border-radius: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  animation: fadeIn 0.3s ease;
+}
+
+.message.user {
+  background-color: var(--mensaje-user);
+  color: #000;
+  align-self: flex-end;
+}
+
+.message.bot {
+  background-color: var(--mensaje-bot);
+  color: #000;
+  align-self: flex-start;
+}
+
+.input-container {
+  display: flex;
+  max-width: 900px;
+  width: 100%;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 0.9rem 1.2rem;
+  border-radius: 10px;
+  border: 2px solid var(--borde);
+  background-color: #0d1117;
+  color: var(--texto-brillante);
+  font-size: 1rem;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--acento);
+  box-shadow: 0 0 5px var(--acento);
+}
+
+button {
+  padding: 0.9rem 1.5rem;
+  border-radius: 10px;
+  background: var(--mensaje-bot);
+  border: none;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #1f6feb;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar oscura */
+.chat-container::-webkit-scrollbar {
+  width: 8px;
+}
+.chat-container::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 10px;
+}
